@@ -1,0 +1,74 @@
+# VERBOSITY
+/run/verbose 1
+/event/verbose 1
+/tracking/verbose 0
+/process/em/verbose 1
+## Making sure electroluminescence is turned on
+## Nexus Physics List
+/PhysicsList/Nexus/clustering           false
+/PhysicsList/Nexus/drift                false
+/PhysicsList/Nexus/electroluminescence  false
+### Total E 6536920 eV /22 eV 297132.7 Electrons
+##Solid Angle Calculation
+## 291826.7857142857142857*970*0.7*0.105*((0.5)^2/(4(35)^2)
+#GEOMETRY
+
+
+/Geometry/CRAB/gas_pressure 9.7 bar
+/Geometry/CRAB/scinYield 25510 1/MeV
+#/Geometry/CRAB/scinYield 0 1/MeV
+#/Geometry/CRAB/ELYield 926 1/cm
+/Geometry/CRAB/ELYield 1.43 1/cm
+/Geometry/CRAB/chamber_diam  15. cm
+/Geometry/CRAB/chamber_length 43.18 cm
+/Geometry/CRAB/chamber_thickn 2. mm
+#/Geometry/CRAB/SourcePosition -4.5 -4.5 -4.5 cm
+/Geometry/CRAB/SourcePosition -1.6 0 -5 cm
+#/Geometry/CRAB/SourcePosition 0 0 0 cm
+
+### Impurities
+/Geometry/CRAB/ElecLifTime 1000 ms
+## EL Gap
+/Geometry/CRAB/ELGap 7 mm
+
+## PMT Positions
+/Geometry/CRAB/PMT1_Pos 2.32 cm
+/Geometry/CRAB/PMT3_Pos 3.52 cm
+
+#Active
+/Geometry/CRAB/Active_diam 8.5 cm
+/Geometry/CRAB/Active_length 42 cm
+
+#SourceEncloser
+/Geometry/CRAB/SourceEn_diam 10 mm
+/Geometry/CRAB/SourceEn_holedi 5 mm
+/Geometry/CRAB/SourceEn_offset 5.7 cm
+
+# GENERATOR
+## Source Enclosures
+/Geometry/CRAB/HideSource true
+/Geometry/CRAB/HideCollimator true
+/Generator/Kr83mGenerator/region FIELDCAGE
+
+
+/nexus/random_seed -2
+
+
+#Actions
+#/Actions/DefaultEventAction/energy_threshold 100 eV
+#/Actions/DefaultEventAction/max_energy 1.00 GeV
+#/Actions/DefaultEventAction/min_energy 100 eV
+
+/Actions/CRABAnalysisSteppingAction/FileSave true
+/Actions/CRABAnalysisSteppingAction/FileName lead210.txt
+/Actions/CRABAnalysisSteppingAction/isLead210 true
+
+
+#/Actions/SaveAllSteppingAction/select_particle e-
+
+
+# PERSISTENCY
+/nexus/persistency/eventType background
+#/nexus/persistency/outputFile /dev/null/test
+/nexus/persistency/outputFile test
+#/run/printProgress 100

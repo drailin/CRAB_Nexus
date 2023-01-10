@@ -1,0 +1,34 @@
+
+
+#Physicslist
+/PhysicsList/RegisterPhysics G4EmStandardPhysics_option4
+/PhysicsList/RegisterPhysics G4DecayPhysics
+/PhysicsList/RegisterPhysics G4RadioactiveDecayPhysics
+#/PhysicsList/RegisterPhysics G4OpticalPhysics
+/control/execute macros/physics/DefaultPhysicsList.mac
+/control/execute macros/physics/IonizationElectron.mac
+
+/PhysicsList/Nexus/clustering          true
+/PhysicsList/Nexus/drift               true
+/PhysicsList/Nexus/electroluminescence false
+/PhysicsList/Nexus/photoelectric       false
+
+#Geometry
+/nexus/RegisterGeometry CRAB_NKB
+
+#Generator
+#/nexus/RegisterGenerator Kr83mGenerator
+/nexus/RegisterGenerator SingleParticleGenerator
+#/nexus/RegisterGenerator CrabSourceGenerator
+
+#FileSave
+/nexus/RegisterPersistencyManager PersistencyManager
+
+#Actions
+/nexus/RegisterTrackingAction OpticalTrackingAction
+/nexus/RegisterEventAction DefaultEventAction
+/nexus/RegisterRunAction DefaultRunAction
+#/nexus/RegisterSteppingAction AnalysisSteppingAction
+
+#Config
+/nexus/RegisterMacro macros/CRAB/CRAB_Pb210.config.mac

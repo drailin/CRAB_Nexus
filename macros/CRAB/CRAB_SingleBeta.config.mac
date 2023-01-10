@@ -1,0 +1,37 @@
+# VERBOSITY
+/control/verbose 0
+/run/verbose 0
+/event/verbose 0
+/tracking/verbose 0
+
+/process/em/verbose 1
+
+#GEOMETRY
+#/Geometry/CRAB_NKB/gas_pressure 10. bar
+#/Geometry/CRAB_NKB_NKB/chamber_diam  15. cm
+#/Geometry/CRAB_NKB/chamber_length 25. cm
+#/Geometry/CRAB_NKB/chamber_thickn 2. mm
+#/Geometry/CRAB_NKB/SourcePosition -10 0 0
+
+#Active
+#/Geometry/CRAB_NKB/active_diam 8.5 cm
+#/Geometry/CRAB_NKB/active_length 20 cm
+
+# GENERATOR
+/Generator/SingleParticle/region/GAS
+/Generator/SingleParticle/particle beta
+/Generator/SingleParticle/min_energy 1.16 MeV
+/Generator/SingleParticle/max_energy 1.16 MeV
+/Generator/SingleParticle/min_costheta -1
+/Generator/SingleParticle/max_costheta -1
+/Generator/SingleParticle/min_phi 0
+/Generator/SingleParticle/max_phi 0
+
+#Actions
+/Actions/DefaultEventAction/energy_threshold 100 eV
+/Actions/DefaultEventAction/max_energy 1.00 GeV
+
+# PERSISTENCY
+#/nexus/persistency/eventType background
+/nexus/persistency/outputFile /Users/byrnesnk/nexus/Pb210_2mm_100008.sim
+#/run/printProgress 100

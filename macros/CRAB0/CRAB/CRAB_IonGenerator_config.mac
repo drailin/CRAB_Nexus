@@ -1,0 +1,47 @@
+
+
+# VERBOSITY
+/run/verbose 1
+/event/verbose 1
+/tracking/verbose 1
+/process/em/verbose 1
+## Making sure electroluminescence is turned on
+
+
+# GENERATION
+/Generator/IonGenerator/region  FIELDCAGE
+/Generator/IonGenerator/atomic_number 82
+/Generator/IonGenerator/mass_number 210
+
+
+
+## Nexus Physics List
+/PhysicsList/Nexus/clustering           true
+/PhysicsList/Nexus/drift                true
+/PhysicsList/Nexus/electroluminescence  true
+
+#GEOMETRY
+/Geometry/CRAB/gas_pressure 10. bar
+/Geometry/CRAB/scinYield 1
+/Geometry/CRAB/ElecLifTime 100 ms
+/Geometry/CRAB/chamber_diam  15. cm
+/Geometry/CRAB/chamber_length 43.18 cm
+/Geometry/CRAB/chamber_thickn 2. mm
+/Geometry/CRAB/SourcePosition -4.5 0 0 cm
+#/Geometry/CRAB/SourcePosition 0 0 0 cm
+
+#Active
+/Geometry/CRAB/Active_diam 8.5 cm
+/Geometry/CRAB/Active_length 42 cm
+
+#SourceEncloser
+/Geometry/CRAB/SourceEn_diam 10 mm
+/Geometry/CRAB/SourceEn_holedi 5 mm
+/Geometry/CRAB/SourceEn_offset 5.7 cm
+
+
+
+# PERSISTENCY
+/nexus/persistency/eventType background
+/nexus/persistency/outputFile test
+#/run/printProgress 100

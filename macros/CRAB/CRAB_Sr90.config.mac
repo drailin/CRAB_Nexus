@@ -1,0 +1,40 @@
+# VERBOSITY
+/control/verbose 0
+/run/verbose 0
+/event/verbose 1
+/tracking/verbose 1
+
+/process/em/verbose 1
+
+#GEOMETRY
+#/Geometry/CRAB_NKB/gas_pressure 10. bar
+#/Geometry/CRAB_NKB_NKB/chamber_diam  15. cm
+#/Geometry/CRAB_NKB/chamber_length 25. cm
+#/Geometry/CRAB_NKB/chamber_thickn 2. mm
+#/Geometry/CRAB_NKB/SourcePosition -10 0 0
+
+#Active
+#/Geometry/CRAB_NKB/active_diam 8.5 cm
+#/Geometry/CRAB_NKB/active_length 20 cm
+
+# GENERATOR
+/Generator/CrabSourceGenerator/region GAS
+
+#Pb210
+/Generator/CrabSourceGenerator/atomic_number 82
+/Generator/CrabSourceGenerator/mass_number 210
+
+
+/Generator/CrabSourceGenerator/decay_rate 100000 nCi
+#/Generator/CrabSourceGenerator/event_window 0
+#works only if event_window is zero
+#/Generator/CrabSourceGenerator/NDecays 1
+
+#Actions
+/Actions/DefaultEventAction/energy_threshold 100 eV
+/Actions/DefaultEventAction/max_energy 1.00 GeV
+
+# PERSISTENCY
+#/nexus/persistency/eventType background
+/nexus/persistency/outputFile /Users/byrnesnk/nexus/Sr190_2mm_100000.sim
+#/run/printProgress 100
